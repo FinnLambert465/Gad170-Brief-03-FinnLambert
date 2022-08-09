@@ -6,8 +6,8 @@ public class ShellExplosion : MonoBehaviour
 {
     public GameObject explosionPrefab; // the explosion we want to spawn in
     public LayerMask tankLayer; // the layer of the game object to effect
-    public float maxDamage = 100f; // the maximum amount of damage that my shell can do.
-    public float explosionForce = 1000f; // the amount of force this shell has
+    public float maxDamage = 10f; // the maximum amount of damage that my shell can do. (changed form 100 to 10)
+    public float explosionForce = 100f; // the amount of force this shell has (changed from 1000 to 100)
     public float maxShellLifeTime = 2f; // how long should the shell live for before it goes boom!
     public float explosionRadius = 5f; // how big is our explosion
 

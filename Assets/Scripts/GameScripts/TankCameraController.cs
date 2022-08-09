@@ -7,7 +7,7 @@ public class TankCameraController : MonoBehaviour
     public float dampTime = 0.2f; // Approximate time it should take for our camera to focus on our tanks
     public float screenEdgeBuffer = 4; // space between the top and the bottom of targets
     public float minCameraSize = 6.5f; // the smallest othorgraphic camera size
-    private List<GameObject> listOfTanks = new List<GameObject>(); // a reference to all the tanks in our scene
+    public List<GameObject> listOfTanks = new List<GameObject>(); // a reference to all the tanks in our scene
 
     private Camera cam; // a reference to our main camera 
     private float zoomSpeed; // the speed we be zooming in/out at
@@ -26,23 +26,8 @@ public class TankCameraController : MonoBehaviour
     {
         TankGameEvents.OnTanksSpawnedEvent -= Initalise; // add our initialise function
     }
+    // removed the void start so i can have the camer only focus on one tank instead of both
 
-    private void Start()
-    {
-        // Used if we are not using the spawn tank event.
-        if(enableCameraOnStart)
-        {
-            Tank[] allTanks = FindObjectsOfType<Tank>();
-            List<GameObject> allTanksList = new List<GameObject>(); //list of all tanks
-
-            for(int i=0; i<allTanks.Length; i++)
-            {
-                allTanksList.Add(allTanks[i].gameObject); // store the game object of the tank
-            }
-
-            Initalise(allTanksList);
-        }
-    }
 
     // Update is called once per frame
     void Update()
