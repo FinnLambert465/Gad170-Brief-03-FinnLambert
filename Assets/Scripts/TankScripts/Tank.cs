@@ -61,6 +61,14 @@ public class Tank : MonoBehaviour
         tankMovement.EnableTankMovement(true);
         tankMainGun.EnableShooting(true);
     }
+    /// <summary>
+    /// Disables our tank to recieve input
+    /// </summary>
+    public void DisableInput()
+    {
+        tankMovement.EnableTankMovement(false);
+        tankMainGun.EnableShooting(false);
+    }
 
     /// <summary>
     /// Called when an objects takes damage, if the object taking damage is this tank

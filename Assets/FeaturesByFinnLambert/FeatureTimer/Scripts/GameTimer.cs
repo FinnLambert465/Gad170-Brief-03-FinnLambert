@@ -7,7 +7,10 @@ namespace FinnLambert
     public class GameTimer : MonoBehaviour
     {
         [SerializeField] private float countDown;
-        [SerializeField] public Text countDownTxt;
+        public Text countDownTxt;
+        public GameObject drawScreen;
+        private TankGameManager gameManager;
+
         
 
         // Update is called once per frame
@@ -20,7 +23,13 @@ namespace FinnLambert
             }
             else
             {
-                Debug.Log("Game Over");
+                
+                drawScreen.SetActive(true);
+                for (int i = 0; i < gameManager.allTanksSpawnedIn.Count; i++)
+                {
+                    gameManager.allTanksSpawnedIn[i].DisableInput();
+
+                }
             }
         }
 

@@ -6,7 +6,7 @@ public class TankGameManager : MonoBehaviour
 {
 
     public float preGameWaitTime = 3f;
-    private List<Tank> allTanksSpawnedIn = new List<Tank>(); // a list of all the tanks that we spawned in
+    public List<Tank> allTanksSpawnedIn = new List<Tank>(); // a list of all the tanks that we spawned in
 
     private int playerOneScore;
     private int playerTwoScore;
