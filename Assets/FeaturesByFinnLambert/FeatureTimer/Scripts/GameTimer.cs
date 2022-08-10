@@ -25,10 +25,10 @@ namespace FinnLambert
             {
                 
                 drawScreen.SetActive(true);
+
                 for (int i = 0; i < gameManager.allTanksSpawnedIn.Count; i++)
                 {
                     gameManager.allTanksSpawnedIn[i].DisableInput();
-
                 }
             }
         }
