@@ -8,12 +8,12 @@ namespace FinnLambert
         public GameObject playerTwoUI;
         private void OnTriggerEnter(Collider collision)
         {
-            if(collision.tag == "PlayerOne")
+            if(collision.gameObject.tag == "PlayerOne")
             {
                 Debug.Log("PlayerOneWins");
                 playerOneUI.SetActive(true);
             }
-            else if (collision.tag == "PlayerTwo")
+            else if (collision.gameObject.tag == "PlayerTwo")
             {
                 Debug.Log("PlayerTwoWins");
                 playerTwoUI.SetActive(true);

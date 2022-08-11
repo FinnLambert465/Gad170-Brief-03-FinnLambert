@@ -2693,6 +2693,7 @@ MonoBehaviour:
   countDown: 4
   countDownTxt: {fileID: 1404383809}
   drawScreen: {fileID: 547070778}
+  gameManager: {fileID: 1691124198}
 --- !u!1 &1547203217
 GameObject:
   m_ObjectHideFlags: 0
@@ -3275,6 +3276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   preGameWaitTime: 3
+  allTanksSpawnedIn: []
 --- !u!4 &1691124199
 Transform:
   m_ObjectHideFlags: 0

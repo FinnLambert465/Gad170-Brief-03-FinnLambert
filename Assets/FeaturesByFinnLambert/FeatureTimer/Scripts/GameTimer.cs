@@ -9,7 +9,7 @@ namespace FinnLambert
         [SerializeField] private float countDown;
         public Text countDownTxt;
         public GameObject drawScreen;
-        private TankGameManager gameManager;
+        [SerializeField] private TankGameManager gameManager;
 
         
 
