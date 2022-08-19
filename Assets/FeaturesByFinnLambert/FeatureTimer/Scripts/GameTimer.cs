@@ -6,41 +6,54 @@ namespace FinnLambert
 {
     public class GameTimer : MonoBehaviour
     {
-        [SerializeField] private float countDown;
-        public Text countDownTxt;
-        public GameObject drawScreen;
+        [SerializeField] private float timeLeft;
+        [SerializeField] private bool timerOn = false;
+        [SerializeField] private Text timerTxt;
+        [SerializeField] private GameObject drawUI;
         [SerializeField] private TankGameManager gameManager;
 
-        
+        //public delegate void EndTheGame();
+        //public event EndTheGame OnEndGame;
 
-        // Update is called once per frame
-        void Update()
+
+        private void Start()
         {
-            if (countDown > 0)
-            {
-                countDown -= Time.deltaTime;
-                updateTimer(countDown);
-            }
-            else
-            {
-                
-                drawScreen.SetActive(true);
+            timerOn = true;
+        }
 
-                for (int i = 0; i < gameManager.allTanksSpawnedIn.Count; i++)
+        private void Update()
+        {
+            if (timerOn)
+            {
+                if (timeLeft > 0)
                 {
-                    gameManager.allTanksSpawnedIn[i].DisableInput();
+                    timeLeft -= Time.deltaTime;
+                    UpdateTimer(timeLeft);
+                }
+                else
+                {
+                    timerOn = false;
+                    drawUI.SetActive(true);
+                    EndGame();
                 }
             }
         }
-
-        void updateTimer(float currentTime)
+        public void EndGame()
         {
-            currentTime += 1;
+
+            for (int i = 0; i < gameManager.allTanksSpawnedIn.Count; i++)
+            {
+                gameManager.allTanksSpawnedIn[i].DisableInput();
+            }
+        }
+        private void UpdateTimer(float currentTime)
+        {
+            currentTime += 1f;
 
             float minutes = Mathf.FloorToInt(currentTime / 60);
             float seconds = Mathf.FloorToInt(currentTime % 60);
 
-            countDownTxt.text = string.Format("{0:00} : {1:00}", minutes, seconds);
+            timerTxt.text = string.Format("{0:00} : {1:00}", minutes, seconds);
         }
     }
 }
