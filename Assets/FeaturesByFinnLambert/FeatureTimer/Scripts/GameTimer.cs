@@ -10,7 +10,7 @@ namespace FinnLambert
         public bool timerOn = false;
         [SerializeField] private Text timerTxt;
         [SerializeField] private GameObject drawUI;
-        [SerializeField] private TankGameManager gameManager;
+
 
         public delegate void EndTheGame();
         public static event EndTheGame OnEndGame;
@@ -31,7 +31,7 @@ namespace FinnLambert
                 }
                 else
                 {
-                    timerOn = false;
+                    
                     drawUI.SetActive(true);
                     if (OnEndGame != null)
                     {

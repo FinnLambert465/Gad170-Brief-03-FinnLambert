@@ -702,8 +702,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerOneUI: {fileID: 2089140793}
   playerTwoUI: {fileID: 234978620}
-  gameManager: {fileID: 1691124198}
-  gameTimer: {fileID: 1691124200}
 --- !u!1 &423761323
 GameObject:
   m_ObjectHideFlags: 0
@@ -3389,7 +3387,6 @@ MonoBehaviour:
   timerOn: 0
   timerTxt: {fileID: 1404383809}
   drawUI: {fileID: 547070778}
-  gameManager: {fileID: 1691124198}
 --- !u!114 &1691124201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3403,6 +3400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1691124198}
+  gameTimer: {fileID: 1691124200}
 --- !u!1001 &1767058162
 PrefabInstance:
   m_ObjectHideFlags: 0
