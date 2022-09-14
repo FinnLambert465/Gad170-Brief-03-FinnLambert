@@ -7,13 +7,23 @@ namespace FinnLambert
     public class GameTimer : MonoBehaviour
     {
         [SerializeField] private float timeLeft;
-        [SerializeField] private bool timerOn = false;
+        public bool timerOn = false;
         [SerializeField] private Text timerTxt;
         [SerializeField] private GameObject drawUI;
         [SerializeField] private TankGameManager gameManager;
 
-        //public delegate void EndTheGame();
-        //public event EndTheGame OnEndGame;
+        public delegate void EndTheGame();
+        public static event EndTheGame OnEndGame;
+
+        private void OnEnable()
+        {
+            OnEndGame += EndGame;
+        }
+
+        private void OnDisable()
+        {
+            OnEndGame -= EndGame;
+        }
 
 
         private void Start()
@@ -34,7 +44,10 @@ namespace FinnLambert
                 {
                     timerOn = false;
                     drawUI.SetActive(true);
-                    EndGame();
+                    if (OnEndGame != null)
+                    {
+                        OnEndGame();
+                    }
                 }
             }
         }

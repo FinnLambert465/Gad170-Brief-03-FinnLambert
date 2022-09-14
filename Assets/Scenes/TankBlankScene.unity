@@ -199,7 +199,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 141649944}
   m_LocalRotation: {x: -0.00022086057, y: 0.9976079, z: 0.069053024, w: 0.0031893293}
-  m_LocalPosition: {x: 25.8, y: 0, z: 223.4}
+  m_LocalPosition: {x: 25.8, y: 0, z: -210.90001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -702,6 +702,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerOneUI: {fileID: 2089140793}
   playerTwoUI: {fileID: 234978620}
+  gameManager: {fileID: 1691124198}
+  gameTimer: {fileID: 1691124200}
 --- !u!1 &423761323
 GameObject:
   m_ObjectHideFlags: 0
@@ -2200,7 +2202,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375751155}
   m_LocalRotation: {x: -0, y: 0.96705854, z: -0, w: 0.2545542}
-  m_LocalPosition: {x: -19.01, y: 0, z: 221.1}
+  m_LocalPosition: {x: -19.01, y: 0, z: -213.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3382,9 +3384,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ddac1112b3fd94c96e11c5cba426d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countDown: 45
-  countDownTxt: {fileID: 1404383809}
-  drawScreen: {fileID: 547070778}
+  timeLeft: 10
+  timerOn: 0
+  timerTxt: {fileID: 1404383809}
+  drawUI: {fileID: 547070778}
   gameManager: {fileID: 1691124198}
 --- !u!1001 &1767058162
 PrefabInstance:
@@ -4086,7 +4089,7 @@ PrefabInstance:
     - target: {fileID: 3611086288740085292, guid: d9f7e5c8614e0b245a662edb9b4da43c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.840694
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3611086288740085292, guid: d9f7e5c8614e0b245a662edb9b4da43c,
         type: 3}
@@ -4096,7 +4099,7 @@ PrefabInstance:
     - target: {fileID: 3611086288740085292, guid: d9f7e5c8614e0b245a662edb9b4da43c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -31.901062
+      value: -152.3
       objectReference: {fileID: 0}
     - target: {fileID: 3611086288740085292, guid: d9f7e5c8614e0b245a662edb9b4da43c,
         type: 3}

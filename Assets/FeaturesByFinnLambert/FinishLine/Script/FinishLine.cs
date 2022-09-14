@@ -19,6 +19,7 @@ namespace FinnLambert
                 {
                     gameManager.allTanksSpawnedIn[i].DisableInput();
                 }
+                gameTimer.timerOn = false;
 
             }
             else if (collision.gameObject.tag == "PlayerTwo")
@@ -30,7 +31,7 @@ namespace FinnLambert
                 {
                     gameManager.allTanksSpawnedIn[i].DisableInput();
                 }
-                //GameTimer.updateTimer(flase);
+                gameTimer.timerOn = false;
             }
         }
     }
