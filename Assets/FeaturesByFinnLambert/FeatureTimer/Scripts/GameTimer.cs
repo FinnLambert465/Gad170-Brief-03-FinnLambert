@@ -15,17 +15,6 @@ namespace FinnLambert
         public delegate void EndTheGame();
         public static event EndTheGame OnEndGame;
 
-        private void OnEnable()
-        {
-            OnEndGame += EndGame;
-        }
-
-        private void OnDisable()
-        {
-            OnEndGame -= EndGame;
-        }
-
-
         private void Start()
         {
             timerOn = true;
@@ -51,14 +40,7 @@ namespace FinnLambert
                 }
             }
         }
-        public void EndGame()
-        {
 
-            for (int i = 0; i < gameManager.allTanksSpawnedIn.Count; i++)
-            {
-                gameManager.allTanksSpawnedIn[i].DisableInput();
-            }
-        }
         private void UpdateTimer(float currentTime)
         {
             currentTime += 1f;
