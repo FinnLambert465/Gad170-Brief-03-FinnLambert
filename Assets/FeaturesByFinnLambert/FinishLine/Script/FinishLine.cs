@@ -8,6 +8,10 @@ namespace FinnLambert
         public GameObject playerTwoUI;
         public delegate void EndingTheGame();
         public static event EndingTheGame OnEndingGame;
+        public delegate void PlayerOneWins();
+        public static event PlayerOneWins OnPlayerOneWins;
+        public delegate void PlayerTwoWins();
+        public static event PlayerOneWins OnPlayerTwoWins;
 
         private void OnTriggerEnter(Collider collision)
         {
@@ -20,6 +24,10 @@ namespace FinnLambert
                 {
                     OnEndingGame();
                 }
+                if (OnPlayerOneWins != null)
+                {
+                    OnPlayerOneWins();
+                }
 
             }
             else if (collision.gameObject.tag == "PlayerTwo")
@@ -29,6 +37,10 @@ namespace FinnLambert
                 if (OnEndingGame != null)
                 {
                     OnEndingGame();
+                }
+                if (OnPlayerTwoWins != null)
+                {
+                    OnPlayerTwoWins();
                 }
 
             }
